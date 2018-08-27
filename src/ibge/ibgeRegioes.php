@@ -25,11 +25,15 @@
 	    echo '<h1>CAPTANDO REGIÕES DA BASE DE DADOS DO IBGE ......</h1>';
 	    foreach ($contet as $row) {
 	    	//Salva localidade
+	    	//verifica nome da localidade se não possui apóstrofo
+	    	if (stripos($row['nome'],"'") !== false) {
+			    $row['nome'] = str_replace("'","-",$row['nome']);
+			}
 	    	$sql = "INSERT INTO localidade (id_ibge, nome, tipo) VALUES (".$row['id'].", '".$row['nome']."', 'REGIAO');";
-	    	include '../dao/databaseQuery.php';
+	    	include '../src/dao/databaseQuery.php';
 	    	//Salva Rregião
 	    	$sql = "INSERT INTO regiao (sigla, localidade_id) VALUES ('".$row['sigla']."', ".$row['id'].");";
-	    	include '../dao/databaseQuery.php';
+	    	include '../src/dao/databaseQuery.php';
 	    	echo '<p>REGIÃO CAPTADA: '.$row['nome'].'</p>';
 	    } 
 

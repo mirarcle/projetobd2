@@ -23,6 +23,7 @@ WINDOWS: WAMP OU XAMP | LINUX: LAMP
 	'extension=php_pdo_pgsql.dll';
 	'extension=php_pgsql.dll';
 	'pgsql.allow_persistent = On';
+	'max_execution_time = 0';
 ------------------------------------------------
 ------------------------------------------------
 ***************** REPOSITÓRIO ******************

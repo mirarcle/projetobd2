@@ -3,24 +3,30 @@
 <?php include ('../src/core/session.php'); ?>
     <div id="page-wrapper">
        <div class="container">
-            <div class="col-md-12">
-                <div class="col-md-3"></div>
-                <div class="col-md-6">
-                    <div id="main" >
-                        <h1 class="text-center"> Relatório de Bens Pessoais </h1>
-                        <form  action="relatorio.php" method="POST">
-                            <div>
-                                <label> ID do Usuário </label>
-                                <input class="form-control" type="text" name="usuario">
-                            </div>                            
-                            <div class="text-center">
-                                <input class="btn btn-success" style="margin-top: 20px"type="submit" value="Buscar Dados">
-                            </div>
-                        </form>
-                    </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center"> Localidades do Brasil de Acordo com o IBGE </h1>
                 </div>
-                <div class="col-md-3"></div>
-                
+                <form action="relatorio.php" method="POST">
+                    <div class="col-md-4">
+                        <label> Nome da localidade </label>
+                        <input class="form-control" type="text" name="localidade"/>
+                    </div>
+                    <div class="col-md-4">
+                        <label> Tipo </label>
+                        <select class="form-control" type="text" name="tipo">
+                            <option label="Selecione" value="" />
+                            <option label="Região" value="REGIAO" />
+                            <option label="UF" value="UF" />
+                            <option label="Mesorregião" value="MESORREGIAO" />
+                            <option label="Microrregião" value="MICRORREGIAO" />
+                            <option label="Município" value="MUNICIPIO" />
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input class="btn btn-success" style="margin-top: 20px"type="submit" value="Buscar Dados"/>
+                    </div>   
+                </form>             
             </div>
         </div>
         <?php 

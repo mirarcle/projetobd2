@@ -87,7 +87,6 @@ CREATE TABLE IF NOT EXISTS microrregiao (
 -- Table municipio
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS municipio (
-  microregiao_id INT NOT NULL,
   localidade_id INT NOT NULL,
   microrregiao_localidade_id INT NOT NULL,
   PRIMARY KEY (localidade_id),

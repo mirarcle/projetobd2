@@ -25,11 +25,15 @@
 	    echo '<h1>CAPTANDO MUNICÍPIOS DA BASE DE DADOS DO IBGE ......</h1>';
 	    foreach ($contet as $row) {
 	    	//Salva localidade
+	    	//verifica nome da localidade se não possui apóstrofo
+	    	if (stripos($row['nome'],"'") !== false) {
+			    $row['nome'] = str_replace("'","-",$row['nome']);
+			}
 	    	$sql = "INSERT INTO localidade (id_ibge, nome, tipo) VALUES (".$row['id'].", '".$row['nome']."', 'MUNICIPIO');";
-	    	include '../dao/databaseQuery.php';
+	    	include '../src/dao/databaseQuery.php';
 	    	//Salva Rregião
-	    	$sql = "INSERT INTO municipio (localidade_id, regiao_localidade_id) VALUES (".$row['id'].", ".$row['microrregiao']['id'].");";
-	    	include '../dao/databaseQuery.php';
+	    	$sql = "INSERT INTO municipio (localidade_id, microrregiao_localidade_id) VALUES (".$row['id'].", ".$row['microrregiao']['id'].");";
+	    	include '../src/dao/databaseQuery.php';
 	    	echo '<p>MUNICÍPIO CAPTADO: '.$row['nome'].'</p>';
 	    }    
 

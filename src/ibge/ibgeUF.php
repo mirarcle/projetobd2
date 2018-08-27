@@ -25,11 +25,15 @@
 	    echo '<h1>CAPTANDO UFs DA BASE DE DADOS DO IBGE ......</h1>';
 	    foreach ($contet as $row) {
 	    	//Salva localidade
+	    	//verifica nome da localidade se não possui apóstrofo
+	    	if (stripos($row['nome'],"'") !== false) {
+			    $row['nome'] = str_replace("'","-",$row['nome']);
+			}
 	    	$sql = "INSERT INTO localidade (id_ibge, nome, tipo) VALUES (".$row['id'].", '".$row['nome']."', 'UF');";
-	    	include '../dao/databaseQuery.php';
+	    	include '../src/dao/databaseQuery.php';
 	    	//Salva Rregião
 	    	$sql = "INSERT INTO uf (sigla, localidade_id, regiao_localidade_id) VALUES ('".$row['sigla']."', ".$row['id'].", ".$row['regiao']['id'].");";
-	    	include '../dao/databaseQuery.php';
+	    	include '../src/dao/databaseQuery.php';
 	    	echo '<p>UF CAPTADO: '.$row['nome'].'</p>';
 	    }    
 
