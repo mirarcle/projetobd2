@@ -1,0 +1,53 @@
+/* Cabeçalho */
+.cabecalho{
+	width: 100%;
+	height: 20px;
+}
+
+.imagem {
+    position: relative;
+    float: right;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+
+.cabecalho h1{
+	text-align: center;
+}
+
+.escrito{
+	display:inline-grid;
+	font-weight: bold;
+}
+
+
+
+/* Tabela */
+.limpa{
+	/*border: none !important;*/
+	/*border-top: 1px solid red !important;*/
+}
+.fundo{
+	background-color: #D3D3D3;
+	border-top: 1px solid black !important;
+    border-bottom: 1px solid black !important;
+}
+.direita{
+	text-align: right;
+}
+.esquerda{
+	text-align: left;
+}
+
+.linhabranca{
+	border-top: 1px solid black !important;
+    border-bottom: 1px solid black !important;
+}
+
+.bordanotop{
+	border-top: 1px solid black !important;
+}
+
+.bordabotom{
+	border-bottom: 1px solid black !important;
+}

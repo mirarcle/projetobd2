@@ -1,0 +1,102 @@
+/************ Cabeçalho *********************/
+
+.cabecalho{
+    width: 100%;
+    height: 20px;
+    margin-bottom: 50px;
+}
+
+.teste {
+     text-align: right;  
+}
+
+.cabecalho h1{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.escrito{
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.content {
+    width: 100%;
+    margin: 0 auto;
+}
+.esquerda {
+    text-align: left;
+}
+.direita{
+    text-align: right; 
+}
+
+
+/********* Tabela ****************************/
+table.tabela {
+    width: 100%;
+}
+
+table.tabelaC {
+    width: 100%;
+
+}
+
+table.tabelaC td {
+   font-weight:bold;
+}
+
+.reduz{
+    width: 200px
+}
+
+.fundo {
+    background-color: #D3D3D3;
+    border-top: 1px solid ;
+    border-bottom: 1px solid ;
+}
+
+.semTop{
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    background-color: #D3D3D3;
+}
+
+/******************** tabela dados *****************/
+.tamanho{
+    height: 40px;
+    /*background-color: #D3D3D3;*/
+}
+
+.linhabranca{
+    border-top: 1px solid black;
+    /*border-bottom: 1px solid black;*/
+    height: 20px;
+}
+
+.redimensionar{
+    width: 200px;
+    text-align: center;
+    
+}
+
+.redimensionarInicial{
+    width: 250px;
+    
+}
+
+.bordabotom{
+    border-bottom: 1px solid black;
+}
+
+.bordanotop{
+    border-top: 1px solid black;
+}
+
+.margem {
+    float: left;
+    padding-left: 50px;
+}
+
