@@ -23,6 +23,11 @@
 	    //Trata o retorno
 	    $contet = json_decode($content, true);
 	    echo '<h1>CAPTANDO REGIÕES DA BASE DE DADOS DO IBGE ......</h1>';
+	    
+	    $sql = "INSERT INTO localidade (id_ibge, nome, tipo) VALUES (9999, 'Brasil', 'REGIAO');";
+	    echo '<p>REGIÃO CAPTADA: BRASIL</p>';
+	    include '../src/dao/databaseQuery.php';
+	    
 	    foreach ($contet as $row) {
 	    	//Salva localidade
 	    	//verifica nome da localidade se não possui apóstrofo

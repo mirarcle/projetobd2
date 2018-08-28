@@ -8,7 +8,8 @@
 
     if ($dado['nome'] == $_POST['username']) {  
       $_SESSION['usuario'] = $dado['nome'];
-      $_SESSION['autenticado'] = true;                 
+      $_SESSION['autenticado'] = true;
+      $_SESSION['id'] = $dado['id'];                 
       header("location:pages/home.php");
     }else {
       $_SESSION['autenticado'] = false; 

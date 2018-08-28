@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <a href="../pages/relatorio.php">Dashbard</a>
+                    <a href="../pages/dashboard.php">Dashbard</a>
                 </li>
                 <li>
                     <a href="../pages/relatorio.php">Banco de localidades</a>

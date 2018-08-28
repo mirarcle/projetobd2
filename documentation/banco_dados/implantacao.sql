@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS usuario (
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS projecao (
   id INT NOT NULL,
-  data_consulta DATE NULL,
+  data_consulta VARCHAR(45) NULL,
   populacao INT NULL,
   incremento VARCHAR(100) NULL,
   obito VARCHAR(100) NULL,
