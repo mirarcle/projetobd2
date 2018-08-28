@@ -1,32 +1,39 @@
 <?php		
-		$sql = "SELECT * FROM localidade JOIN regiao ON localidade.id = regiao.localidade_id JOIN uf on localidade.id = uf.regiao_localidade_id JOIN mesorregiao on localidade.id = mesorregiao.uf_localidade_id JOIN microrregiao localidade.id = microrregiao.mesorregiao_localidade_id JOIN municipio on localidade.id = municipio.microrregiao_localidade_id WHERE ";
+		$sql = "SELECT id_ibge AS id, nome, tipo FROM localidade";
 
 		if ($_POST['localidade'] != '' && $_POST['tipo'] == ''){
-			$sql = $sql."localidade.nome like '%".$_POST['localidade']."%'";
+			$sql = $sql." WHERE nome like '%".$_POST['localidade']."%'";
 		}
 		if ($_POST['localidade'] == '' && $_POST['tipo'] != ''){
-			$sql = $sql."localidade.tipo like '%".$_POST['tipo']."%'";
+			$sql = $sql." WHERE tipo like '".$_POST['tipo']."'";
 		}
 		if ($_POST['localidade'] != '' && $_POST['tipo'] != ''){
-			$sql = $sql."localidade.tipo like '%".$_POST['tipo']."%' and localidade.nome like '%".$_POST['localidade']."%'";
+			$sql = $sql." WHERE tipo like '".$_POST['tipo']."' and nome like '%".$_POST['localidade']."%'";
 		}
-		$sql = $sql."order by nome asc;";
-		echo $sql;
+		$sql = $sql." order by nome asc;";
+
 		include 'dao/databaseQuery.php';
 ?>
 <table class="table table-hover table-bordered" style= "margin-top: 30px">
 	<thead style="background-color: #8a8a5c; font-size: 14px; font-weight: bold; text-align: center; color: white; font-family: 'Arial Narrow';">
-		<tr>	
+		<tr>
 			<td>LOCALIDADE</td>
-			<td>SIGLA</td>
+			<td>ID IBGE</td>
 			<td>TIPO</td>			
 		</tr>
 	</thead>
-	<?php while($dado){ ?>
-		<tr>				
-			<td><?php echo $dado["nome"]; ?></td>
-			<td><?php echo isset($dado["sigla"]) ? $dado["sigla"] : '-'; ?></td>
-			<td><?php echo $dado["tipo"]; ?></td>
-		<tr>
-	<?php } ?>
+	<tbody>
+		<?php $total = 0; while($dado = pg_fetch_assoc($resultado)) { ?>
+			<tr>			
+				<td><?php echo $dado['nome']; ?></td>
+				<td><?php echo $dado['id']; ?></td>
+				<td><?php echo $dado['tipo']; ?></td>	
+			<tr>
+		<?php $total ++;} ?>
+	</tbody>
+	<tfooter>
+		<tr style="background-color: #8a8a5c; font-size: 14px; font-weight: bold; text-align: center; color: white; font-family: 'Arial Narrow';">
+			<td colspan="3">TOTAL DE <?php echo $total;?> LOCALIDADES</td>			
+		</tr>
+	</tfooter>
 </table>		

@@ -5,7 +5,7 @@
        <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center"> Localidades do Brasil de Acordo com o IBGE </h1>
+                    <h1 class="text-center"> Localidades do Brasil de acordo com o IBGE </h1>
                 </div>
                 <form action="relatorio.php" method="POST">
                     <div class="col-md-4">
