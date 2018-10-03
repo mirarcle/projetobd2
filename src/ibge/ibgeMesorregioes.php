@@ -22,7 +22,7 @@
 
 	    //Trata o retorno
 	    $contet = json_decode($content, true);
-	    echo '<h1>CAPTANDO MESORREGIÕES DA BASE DE DADOS DO IBGE ......</h1>';
+	    echo '<h1>CAPTANDO MESORREGIÕES DA BASE DE DADOS DO IBGE</h1>';
 	    foreach ($contet as $row) {
 	    	//Salva localidade
 	    	//verifica nome da localidade se não possui apóstrofo
@@ -34,7 +34,7 @@
 	    	//Salva Rregião
 	    	$sql = "INSERT INTO mesorregiao (localidade_id, uf_localidade_id) VALUES (".$row['id'].", ".$row['UF']['id'].");";
 	    	include '../src/dao/databaseQuery.php';
-	    	echo '<p>MESORREGIÃO CAPTADA: '.$row['nome'].'</p>';
+			echo '<p>MESORREGIÃO CAPTADA: </p><p style="color: #333367>'.$row['nome'].'</p>';
 	    }    
 
 	} catch(Exception $e) {

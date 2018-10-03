@@ -34,7 +34,7 @@
 	    	//Salva Rregião
 	    	$sql = "INSERT INTO microrregiao (localidade_id, mesorregiao_localidade_id) VALUES (".$row['id'].", ".$row['mesorregiao']['id'].");";
 	    	include '../src/dao/databaseQuery.php';
-	    	echo '<p>MICRORREGIÃO CAPTADA: '.$row['nome'].'</p>';
+	    	echo '<p>MICRORREGIÃO CAPTADA: </p><p style="color: #333367>'.$row['nome'].'</p>';
 	    }    
 
 	} catch(Exception $e) {

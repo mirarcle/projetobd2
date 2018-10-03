@@ -1,4 +1,4 @@
-﻿/* Cabeçalho */
+/* Cabeçalho */
 .cabecalho{
 	width: 100%;
 	height: 20px;
@@ -10,6 +10,7 @@
     margin-bottom: 15px;
     margin-right: 15px;
 }
+
 .cabecalho h1{
 	text-align: center;
 }
@@ -18,36 +19,7 @@
 	display:inline-grid;
 	font-weight: bold;
 }
-.containerg{
-	background-image: url('../imagens/photo-1520114878144-6123749968dd.jpg');
-	width: 100%;
-	height: 100vh;
-	background-size: cover;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.containerg-interno{
-	width: 30%;
-    border: 1px solid #f4f4f4;
-    background: white;
-    padding: 5%;
-	border-radius: 3%;
-}
-.btn{
-	background-color: #203160 !important;
-}
-.btn-primary{
-	border: none !important;
-}
-.btn:hover, .btn:active, .btn:visited{
-	background-color: #282e40 !important;
-}
-.well{
-	border: 0.5px solid #f4f4f4;
-	
-	text-align: center;
-}
+
 
 
 /* Tabela */

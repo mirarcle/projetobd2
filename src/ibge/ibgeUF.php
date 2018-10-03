@@ -22,7 +22,7 @@
 
 	    //Trata o retorno
 	    $contet = json_decode($content, true);
-	    echo '<h1>CAPTANDO UFs DA BASE DE DADOS DO IBGE ......</h1>';
+	    echo '<h1>CAPTANDO UFs DA BASE DE DADOS DO IBGE</h1>';
 	    foreach ($contet as $row) {
 	    	//Salva localidade
 	    	//verifica nome da localidade se não possui apóstrofo
@@ -34,7 +34,7 @@
 	    	//Salva Rregião
 	    	$sql = "INSERT INTO uf (sigla, localidade_id, regiao_localidade_id) VALUES ('".$row['sigla']."', ".$row['id'].", ".$row['regiao']['id'].");";
 	    	include '../src/dao/databaseQuery.php';
-	    	echo '<p>UF CAPTADO: '.$row['nome'].'</p>';
+	    	echo '<p>UF CAPTADA: </p><p style="color: #333367>'.$row['nome'].'</p>';
 	    }    
 
 	} catch(Exception $e) {

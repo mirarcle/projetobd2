@@ -4,12 +4,11 @@
     <div id="page-wrapper">
        <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center"> Olá <?php echo $_SESSION['usuario'];?>!</h1>
+			<div style="display: flex; justify-content: center;">
+                <div class="col-md-6">
+                    <a class="btn btn-lg btn-primary btn-block" href="home.php?api=true" >INICIAR INTEGRAÇÂO COM BASE DO IBGE</a>
                 </div>
-                <div class="col-md-12">
-                    <a class="btn btn-success" href="home.php?api=true" >INICIAR INTEGRAÇÂO COM BASE DO IBGE</a>
-                </div>
+				</div>
                 <div class="col-md-12">
                     <div class="divider"/>
                 </div>
@@ -17,16 +16,21 @@
                     <?php 
                         if(isset($_GET['api'])){
                             if($_GET['api'] == true){
+								?> <div class="grupo-regioes"> <?php
                                 include '../src/ibge/ibgeRegioes.php';
-                                echo '<p>---------------------------------------------------------------------------</p>';
-                                include '../src/ibge/ibgeUF.php';
-                                echo '<p>---------------------------------------------------------------------------</p>';
-                                include '../src/ibge/ibgeMesorregioes.php';
-                                echo '<p>---------------------------------------------------------------------------</p>';
-                                include '../src/ibge/ibgeMicrorregioes.php';
-                                echo '<p>---------------------------------------------------------------------------</p>';
-                                include '../src/ibge/ibgeMunicipios.php';
-                                echo '<p>---------------------------------------------------------------------------</p>';
+                                ?></div><?php
+                                ?> <div class="grupo-regioes"> <?php
+								include '../src/ibge/ibgeUF.php';
+                                ?></div><?php
+                                ?> <div class="grupo-regioes"> <?php
+								include '../src/ibge/ibgeMesorregioes.php';
+                                ?></div><?php
+                                ?> <div class="grupo-regioes"> <?php
+								include '../src/ibge/ibgeMicrorregioes.php';
+                                ?></div><?php
+                                ?> <div class="grupo-regioes"> <?php
+								include '../src/ibge/ibgeMunicipios.php';
+                                ?></div><?php
                             }
                         }
                     ?>

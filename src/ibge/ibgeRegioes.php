@@ -22,7 +22,7 @@
 
 	    //Trata o retorno
 	    $contet = json_decode($content, true);
-	    echo '<h1>CAPTANDO REGIÕES DA BASE DE DADOS DO IBGE ......</h1>';
+	    echo '<h1>CAPTANDO REGIÕES DA BASE DE DADOS DO IBGE </h1>';
 	    
 	    $sql = "INSERT INTO localidade (id_ibge, nome, tipo) VALUES (9999, 'Brasil', 'REGIAO');";
 	    echo '<p>REGIÃO CAPTADA: BRASIL</p>';
@@ -39,7 +39,7 @@
 	    	//Salva Rregião
 	    	$sql = "INSERT INTO regiao (sigla, localidade_id) VALUES ('".$row['sigla']."', ".$row['id'].");";
 	    	include '../src/dao/databaseQuery.php';
-	    	echo '<p>REGIÃO CAPTADA: '.$row['nome'].'</p>';
+	    	echo '<p>REGIÃO CAPTADA: </p><p style="color: #333367>'.$row['nome'].'</p>';
 	    } 
 
 	} catch(Exception $e) {

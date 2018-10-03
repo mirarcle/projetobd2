@@ -7,6 +7,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="../resources/js/js.js"></script>
     <link href="../resources/css/custom.css" rel="stylesheet" id="bootstrap-css">
+	<link rel="stylesheet" href="./resources/css/style.css">
 </head>
 <?php
    ob_start();

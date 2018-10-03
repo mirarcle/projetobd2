@@ -22,7 +22,7 @@
 
 	    //Trata o retorno
 	    $contet = json_decode($content, true);
-	    echo '<h1>CAPTANDO MUNICÍPIOS DA BASE DE DADOS DO IBGE ......</h1>';
+	    echo '<h1>CAPTANDO MUNICÍPIOS DA BASE DE DADOS DO IBGE</h1>';
 	    foreach ($contet as $row) {
 	    	//Salva localidade
 	    	//verifica nome da localidade se não possui apóstrofo
@@ -34,7 +34,7 @@
 	    	//Salva Rregião
 	    	$sql = "INSERT INTO municipio (localidade_id, microrregiao_localidade_id) VALUES (".$row['id'].", ".$row['microrregiao']['id'].");";
 	    	include '../src/dao/databaseQuery.php';
-	    	echo '<p>MUNICÍPIO CAPTADO: '.$row['nome'].'</p>';
+	    	echo '<p>MUNICÍPIO CAPTADA: </p><p style="color: #333367>'.$row['nome'].'</p>';
 	    }    
 
 	} catch(Exception $e) {
